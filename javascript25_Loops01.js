@@ -63,7 +63,7 @@ for (let index = 1 ; index <= 20 ; index++) {
     const element = index;
     if (element == 5) {
         console.log("Detected 5")
-        continue // --> this continue keyword is used to skip the loop as element value become equal to 5.
+        continue // --> this continue keyword is used to skip the iteration as element value become equal to 5.
     }
 
     console.log(`Value of index is : ${index}`);
