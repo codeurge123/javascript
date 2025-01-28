@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Chai aur code</title>
+</head>
+
+<body style="background-color: rgba(21, 20, 20, 0.839); color: white;">
+    <div class="parent">
+        <div class="day">Monday</div>
+        <div class="day">Tuesday</div>
+        <div class="day">Wednesdy</div>
+        <div class="day">Thursday</div>
+    </div>
+</body>
+<script>
+    const parentElements = document.
+        querySelector('.parent'); // --> THis is how we can select any element from the webpage.
+    // console.log(parentElements); --> printing selected element
+    // console.log(parentElements.children) --> printing the childrens of the selected element that are maybe in the form of "HTMLCollection".
+
+    // console.log(parentElements.children[1].innerHTML) --> using this printing 1 children inner HTML of the parentElement 
+
+    // HTMLCollection ke upar hum khud se loop apply kar skta hai
+    for (let i = 0; i < parentElements.children.length; i++) {
+        console.log(parentElements.children[i].innerHTML);
+
+    }
+
+    // This will manipulate the DOM content.
+    parentElements.children[1].style.color = "orange";
+
+    // console.log(parentElements.firstElementChild); // --> Using this .firstElementChild method we can target the first element of the selected element 
+    // console.log(parentElements.lastElementChild); // --> Using this .lastElementChild method we can target the last element of the selected element 
+
+    // yaha par basically hum kar kya rah hai --> parent se child par move kar raha hai.
+
+
+    // And ab jasa aap parent se child par move kar raha ha vasa aap child se parent par bhe move kar skta hai.
+    const dayOne = document.querySelector('.day');
+    console.log(dayOne)
+    // Ab agar aapka pass dayOne rakha hua hai kese variable mein and aap us se parent element par jana chata hai to vo kaisa ho : 
+    // b/c baar baar querySelector use karna is not good b/c ye ek heavy operation hai.
+
+    // child to parent jana hai ab to vo kuch aisa kara ga :
+    console.log(dayOne.parentElement);
+
+    // Aap cha hai to nextElement sibling pr bhe jaa skta hai dayOne sa.
+    console.log(dayOne.nextElementSibling)
+
+    console.log("Nodes : ", parentElements.childNodes) // --> this give the number of childNode of the selected element.
+
+    
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||| */
+    
+    // Now Understand How to create a NodeList/Element : 
+    // Basically ab aapko create karna hai ek "div" element to vo ab kaisa kara ga let see: 
+
+    const div = document.createElement('div');
+    console.log(div) // --> Eske help se hum ne jo div create kara hai vo print bhe kara leya.
+
+    // Now setting the class and id on div element that we create 
+    div.className = "main"
+    div.id = "myId"
+
+    div.setAttribute("title", "genrated title");
+
+    // Now providing styling to our "div" that is created by us :
+    div.style.backgroundColor = "green";
+    div.style.padding = "12px"
+    // div.innerText = "Chai aur code" --> "div" mein content humm kuch es tarika se bhe de skta hai.
+
+    const addText = document.createTextNode("Chai aur code"); // --> and Humm kuch es tarika se bhe "div" mein content de skta hai 
+    div.appendChild(addText);
+
+
+    // par main baat ye hai ke humm ne ye sab to de deya but ye "div" page par display ku nhi ho rah ku ke aap ne ek div create kara and vo div abhe memory ke andar hai and usko display karna ke leya aapko phala usko page pe attach karna ho ga.
+
+    // Now attaching "div" to the page using appendchild method
+    document.body.appendChild(div);
+
+</script>
+
+</html>
