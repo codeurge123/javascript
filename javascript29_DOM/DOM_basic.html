@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>DOM Learning</title>
+    <style>
+        .bg-black {
+            background-color: #212121;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-black">
+    <div>
+        <h1 id="title" class="heading">DOM Learning on chai aur code <span style="display: none;">test text</span></h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque!</p>
+    </div>
+    <ul>
+        <li class="list-item">one</li>
+        <li class="list-item">two</li>
+        <li class="list-item">three</li>
+        <li class="list-item">four</li>
+    </ul>
+
+    <!-- Basically ek bar element select karna aa gaya javascript ka through and uski puri strategy hum na sikh le uska baad methods ka naam pata karna and uska baad koi chinta ke baat nhi hai -->
+    <script>
+
+        document.getElementById('title') // --> Using this method we can select any element from the given document.
+
+        //  <h1 id=​"title" class=​"heading">​DOM Learning on chai aur code​</h1>​
+        // This is how we select element through javascript
+        // undefined
+        document.getElementById('title').id // --> Give id of the selected element
+        // 'title'
+        document.getElementById('title').className // --> Give class of the selected element
+        // 'heading'
+        // document.getElementById('title').getAttribute() // --> This show error ku ke phala batna hoga ke kya attribute chiya aapko of selected element ka.
+
+        // //  VM634:1 Uncaught TypeError: Failed to execute 'getAttribute' on 'Element': 1 argument required, but only 0 present.
+        // //  at <anonymous>:1:34
+        // //     (anonymous) @ VM634:1
+        // //     [NEW] Explain Console errors by using Copilot in Edge: click
+
+        //     to explain an error. 
+        //     Learn more
+        //     Don't show again
+
+
+        // document.getElementById('title').getAttribute
+        // <!-- ƒ getAttribute() { [native code] } -->
+        // document.getElementById('title').getAttribute('id')
+        // 'title'
+        // document.getElementById('title').getAttribute('class')
+        // 'heading'
+        // Jasa aap atrributes ko "get" kar skta ho vasa he aap attributes ko "set" bhe kar skta ho by using "setAttribute()" fucntion
+        // undefined
+        document.getElementById('title').setAttribute('class', 'test') // --> this will overwrite the previous attribute of the class
+        // undefined
+        document.getElementById('title').setAttribute('class', 'test heading') // --> by doing this we can set two classes to an selected element
+
+        // undefined
+
+        // This is how we can manipulate the attribute of the selected element by selecting it through javascript
+
+        // undefined
+
+
+        const title = document.getElementById('title')
+        // undefined
+
+        title
+        // < h1 id = "title" class=​"heading" > DOM Learning on chai aur code​</h1 >
+        // As you can see humm ne ek variable mein dal deya hai selected element ko ab sirf or sirf variable likhna se he hum us particular element ko access/select kar skta hai
+        // undefined
+
+        title.style.backgroundColor = 'green'
+        // 'green'
+        // Ab aap dekh he skta hai ke by instant green color as a background color set ho gaya hai and this is how we can set property to selected element through javascript
+
+        // undefined
+
+        title.style.padding = '15px'
+        // '15px'
+        title.style.borderRadius = '6px'
+        // '6px'
+        // Through javascript we can also set padding and borderradius to the selected element by doing this.
+        title
+        // <h1 id=​"title" class=​"test heading" style=​"background-color:​ green;​ padding:​ 15px;​ border-radius:​ 6px;​">​DOM Learning on chai aur code​</h1>​
+        // Selected element se class or id kasa nikal ta hai ye to humm ne dekh leya hai ab humm dekha ga ke yaha par humm content kaisa add kar skta hai using javascript
+        // undefined
+
+        // Or humm ya bhe dekha ga ke content kaisa nikal skta hai humm title mein se
+
+        title.textContent
+        // 'DOM Learning on chai aur code'
+
+        title.innerHTML
+        // 'DOM Learning on chai aur code'
+
+        title.innerText
+        // 'DOM Learning on chai aur code'
+        // yara ab en teeno mein difference kya hai --> textContent,innerHTML and innerText agar sabhe same value de rah hai 
+
+        // Let's see the difference :
+        // to innerText and textContent mein basic sa sirf yhi difference hai ke innerText humko vhi deta hai jo screen par display ho rh hai 
+        // vhi textContent humko sara ka sara content de deta hai jo bhe selected element ke andar present hai whether that content is display:none; or we can say not displayed on the screen.
+
+        title.innerText
+        // 'DOM Learning on chai aur code'
+        title.textContent
+        // 'DOM Learning on chai aur code test text'
+
+        title.innerHTML
+        // 'DOM Learning on chai aur code <span style="display: none;">test text</span>'
+        // vhi innerHTML jo hai vo humko selected element ke text ka sath sath uska andar ke inner html ko bhe de deta hai output mein. 
+
+        // Element ko Select karna ka bhot sara tarika hai jasa ke getElementbyId , getElementbyClassName and query selector.
+
+        // Now let's talk about query selector :
+        document.querySelector('h2')
+        // < h2 > Lorem ipsum dolor sit.​</h2 >
+
+        // using query selector bhe hum -> apna webpage ka kise bhe particular element ko select kar skta hai by typing there "tag,id,class" but remember one thing using this querySelector('h2') sirf or sirf phala vala h2 select hoga
+        // Note : querySelector() sirf or sirf first item/element hee select karta hai
+
+
+        document.querySelector('ul')
+        // < ul >​…​</ul >​
+        const ul = document.querySelector('ul')
+        undefined
+        ul
+        // <ul>​…​</ul> --> These are output.
+
+        ul.querySelector('li')
+        // <li>​…​</li>​
+
+        const ulfirstli = ul.querySelector('li')
+
+        ulfirstli.style.backgroundColor = 'red'
+        // 'red'
+        // This is how using querySelector we can select any element from the webpage and change it color.
+        // This is how we manipulate DOM
+
+        // Ab aisa he hamra pass ek or method hota hai element ko select karna ke leya in webpage that is querySelectorAll()
+        // This method select all the item/element give as it input
+        // Remember one thing ke ye querySelectorAll() return karta hai NodeList jo ke array nhi hota bulki kuch milta julta hai array se.
+        // That means agar NodeList array nhi hai to eska upar hum array ke taraha se property nhi laga skta.
+
+
+        const myli = document.querySelectorAll('li')
+        // undefined
+        myli
+        // NodeList(3)[li, li, li]0: li1: li2: lilength: 3[[Prototype]]: NodeList
+        // myli.style.color = "green" // --> This will show error b/c ye mera array nhi hai bulki ek NodeList hai.
+        // That means ye hamri nodelist hai to eska upar hum array par jasa property apply karta tha vasa nhi kar skta 
+
+        // Now let see kasa kar skta hai eska upar DOM manipulation ya bol loo property apply
+
+        myli[0].style.color = "green"
+        // 'green'
+
+
+        myli
+        // NodeList(3)[li, li, li]0: li1: li2: lilength: 3[[Prototype]]: NodeList
+        myli.forEach(function (l) {
+            l.style.backgroundColor = "red"
+        })
+        // This is how we can apply forEach loop on NodeList.
+
+
+        // Now Understand about "HTMLCollection" , and how it is different from NodeList
+        // Ek chij dhyan mein rakhna ke HTMLcollection ata hai when we select element in a webpage through "document.getElementbyClassName()"
+        const tempClassList = document.getElementsByClassName('list-item')
+        // undefined
+
+        tempClassList
+        // HTMLCollection(4)[li.list - item, li.list - item, li.list - item, li.list - item]
+
+        // --> Ab HTMlCollection ke upar to humm forEach loop nhi laga skta to ab bhala kasa access kara ga ess selected element ke value --> vo humm kara ga by doing conversion of the HTMLCollection into Array
+
+        // Now How we can do conversion of HTMLCollection into Array -> by using Array.from()
+
+        Array.from(tempClassList)
+        // (4)[li.list - item, li.list - item, li.list - item, li.list - item]0: li.list - item1: li.list - item2: li.list - item3: li.list - itemlength: 4[[Prototype]]: Array(0)
+        const arrlist = Array.from(tempClassList)
+
+        arrlist.forEach(function (li) {
+            // console.log(li.innerText)
+        })
+
+        // VM8992: 2 < li class=​"list-item" style = "background-color:​ red;​ color:​ green;​" >​…​</li >
+        //     VM8992: 2 < li class=​"list-item" style = "background-color:​ red;​" >​…​</li >
+        //         VM8992: 2 < li class=​"list-item" style = "background-color:​ red;​" >​…​</li >
+        //             VM8992: 2 < li class=​"list-item" style = "background-color:​ red;​" >​…​</li >
+
+
+        arrlist.forEach(function (li) {
+            li.style.color = "white"
+        })
+        // undefined
+
+        // to es tarika se HTMLCollection ko use keya jata hai. by convert it into array so we can do DOM manipulation according to our need
+
+
+    </script>
+</body>
+
+</html>
