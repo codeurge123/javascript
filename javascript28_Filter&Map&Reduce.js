@@ -116,7 +116,8 @@ const myNumber = [1, 2, 3]
 // const myTotal = myNumber.reduce(function (acc, currval) {
 //     console.log(`acc: ${acc} and currval : ${currval}`)
 //     return acc + currval
-// }, 0)
+// }, 0) // --> Basically "reduce operation" array ka total nikal ne kaam ata hai.
+
 // -->  Now Implement the reduce operation using arrow function :
 const myTotal = myNumber.reduce((acc, currval) => {
     // console.log(`acc : ${acc} and currval : ${currval}`)
