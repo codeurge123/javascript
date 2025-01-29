@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Scheme Switcher</title>
-    <link rel="shortcut icon" href="https://store-images.s-microsoft.com/image/apps.2142.13934773174839305.4872f066-59b8-4f8a-b662-756795f9bd1d.42acdc1e-1777-457b-aeaf-4fac9f1c6fd3?q=90&w=177&h=265" type="image/x-icon">
+    <link rel="shortcut icon"
+        href="https://store-images.s-microsoft.com/image/apps.2142.13934773174839305.4872f066-59b8-4f8a-b662-756795f9bd1d.42acdc1e-1777-457b-aeaf-4fac9f1c6fd3?q=90&w=177&h=265"
+        type="image/x-icon">
     <style>
-        .button{
+        .button {
             display: inline-block;
             width: 75px;
             height: 75px;
@@ -14,30 +17,38 @@
             margin: 2px;
             margin: auto;
         }
-        .heading{
+
+        .heading {
             text-align: center;
-            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         }
-        .para{
+
+        .para {
             text-align: center;
         }
-        .container{
+
+        .container {
             text-align: center;
         }
-        #gray{
+
+        #gray {
             background-color: gray;
         }
-        #blue{
+
+        #blue {
             background-color: blue;
         }
-        #white{
+
+        #white {
             background-color: white;
         }
-        #yellow{
+
+        #yellow {
             background-color: yellow;
         }
     </style>
 </head>
+
 <body>
     <h2 class="heading"><strong>Color Scheme Switcher</strong></h2>
     <div class="container">
@@ -47,7 +58,8 @@
         <div class="button" id="yellow"></div>
     </div>
 
-    <p class="para"><strong>Try clicking on one of the colors above to change the background color of this page!</strong></p>
+    <p class="para"><strong>Try clicking on one of the colors above to change the background color of this
+            page!</strong></p>
 </body>
 <script>
     const buttons = document.querySelectorAll('.button');
@@ -55,23 +67,24 @@
 
     buttons.forEach(function (button) {
         // console.log(button)
-        button.addEventListener('click',function(e){
+        button.addEventListener('click', function (e) {
             console.log(e);
             console.log(e.target);
             if (e.target.id === "gray") {
                 body.style.backgroundColor = "gray";
             }
-            else if(e.target.id === "blue") {
+            else if (e.target.id === "blue") {
                 body.style.backgroundColor = "blue";
             }
-            else if(e.target.id === "white") {
+            else if (e.target.id === "white") {
                 body.style.backgroundColor = "white";
             }
-            else if(e.target.id === "yellow") {
+            else if (e.target.id === "yellow") {
                 body.style.backgroundColor = "yellow";
             }
         })
     })
 
 </script>
+
 </html>
