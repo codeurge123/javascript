@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        .container {
+            border: 2px solid black;
+            width: 15em;
+            border-radius: 10px;
+            height: 270px;
+            text-align: center;
+            margin: auto;
+            margin-top: 50px;
+            background-color: rgba(128, 128, 128, 0.637);
+            box-shadow: 3px 3px 8px rgb(0, 0, 0);
+        }
+
+        .banner {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+
+        }
+
+        .clock {
+            border: 2px solid orange;
+            width: 150px;
+            height: 28px;
+            border-radius: 15px;
+            margin: auto;
+            background-color: rgba(255, 166, 0, 0.841);
+            margin-top: 45px;
+
+        }
+
+        .cont button {
+            border: 2px solid black;
+            margin: 7px;
+            padding: 4px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p class="banner">Your Local Time</p>
+        <div class="clock"></div>
+        <br>
+        <div class="controls">
+            <span class="cont"><button id="Start">Start</button></span>
+            <span class="cont"><button id="Stop">Stop</button></span>
+            <span class="cont"><button id="reset">Reset</button></span>
+        </div>
+    </div>
+</body>
+<script>
+    const clock = document.querySelector('.clock'); // --> querySelector ke help se hum ne particular element ko select kar leya hai.
+    // console.log(date.toLocaleTimeString()); --> es se sirf or sirf current time print ho jaya ga console mein.
+
+
+
+    setInterval(function() {
+        let date = new Date(); // --> Remember one thing ke date apna pass ek directly object hai.
+        // console.log(date.toLocaleTimeString())
+        clock.innerHTML = date.toLocaleTimeString();
+    },1000) 
+    // --> ye method kya karta hai ke ye bolta hai ke aap mujhe koi ek method da de jiya and bata de jiya ke ketna interval baad mein usko continously run karta jao and yaha par ess 1000 ka reference hai ke har 1 sec. badd aap update kar de jiya mera method ko agar mein yaha par 2000 likh deta that har 2 sec ke badd update kar do method ko.
+    clock.style.color = "white"
+    
+
+</script>
+
+</html>
