@@ -215,7 +215,7 @@
         newGameButton.addEventListener('click', function(e) {
             randomNumber =  parseInt(Math.random() * 100 + 1);
             prevGuess = [];
-            numGuess= 1;
+            numGuess= 0;
             guessSlot.innerHTML = '';
             remaining.innerHTML = `${10-numGuess}`
             lowOrHi.innerHTML = '';
