@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>htnml Events </title>
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="photoshop"
+                    src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt="photoshop"></li>
+            <li><img width="200px" id="japan"
+                    src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="river"
+                    src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <!-- <li><img width="200px" id="owl"  onclick="alert('owl click')"  -->
+            <li><img width="200px" id="owl"
+                    src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><img width="200px" id="prayer"
+                    src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load"
+                    alt=""></li>
+            <li><a target="_blank" style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+    // Javascript ke andar jitna bhe events hota hai vo sequentially he run hota hai but kuch exception hai and unhee exception ko hum dekha ga 
+    // Basically javascript ek sequentially run language hai.
+
+    // Let see ke humm kese bhe particular element par events kaisa laga skta hai.
+    // 1. Phala tarika event lagna ka hai by inline method jis mein humm element mein he likh deta hai event ko like "onclick" ho to ye kar do  and then as we click on that element there is event occur but ye etna optimize tarika nhi hai to ab optimize tarika kya hai by writing in script tag --> like this : 
+    // document.getElementById('owl').onclick = function() {   // --. yaha par humna ek onclick event laga deya hai.
+    //     alert('Owl clicked');
+    // }  --> But ye bhe etni optimize approach nhi hai b/c jab aap "onclick" event laga rh hai to usmein bhe bhoot sari problem ho skti hai to aapko eski jaga "addeventlistner" use karna chiya b/c ye aapko bhot sari functionality provide karta hai then of previous method and ye ek optimize way hai event ko lagna ka.  
+
+    // Now let see third and best approach to set event to your webpage : 
+    // document.getElementById('owl').addEventListener('click',function() {
+    //     alert("owl clicked again");
+    // },false)
+
+    // Note : hmara pass bhoot sara event listener hota hai vo hum dekha ga agaaa. basically jo event ka name likhna hai ke konsa event aap listen kar rh ho vo aap likho ga string mein and then uska baad likha ga function() and then uska baad ek important parameter bhe hota hai jaha par aap true/false likh te hai by default mera ye parameter "false" hota hai.
+
+    // Now Let's talk about event object : 
+    // ye jo mera "variable (eventObj)" hai yaha par ye mera ek event object hai.
+    // document.getElementById('owl').addEventListener('click', function (eventObj) {
+    //     console.log(eventObj)
+    // }, false ) // --> yaha par jo hum ne "false" likha hai ye hamra related hai to the concept of event propagation.
+    // Ab event propagation mein do chij ate hai "number 1 is event bubbling" and the "number 2 is event capurting".
+
+    // Notes: types of event jo hum aga padha ga are :  
+    // type , timestamp , defaultPrevented 
+    //  target , toElement , srcElement , currentTarget  
+    // clientX, clientY, screenX , screenY
+    // altKey, ctrlkey, shiftkey , keyCode
+
+
+    // Now Let's Understand about event propagation : 
+    // document.getElementById('images').addEventListener('click',function(e) {
+    //     console.log(`clicked inside ul`)
+    // },false);
+
+    // document.getElementById('owl').addEventListener('click',function(e) {
+    //     console.log(`owl clicked`)
+    //     e.stopPropagation(); // --> Using this humm bubbling ko rok skta hai and hum bubbling ko es liya rok na chata hai b/c kabhe kabhe aisa ho skta hai ke hum chahai ke jab mein kuch particular kaam karu  tabhe mera upar event chala naaa ke es event ka kaam ko karna mein he chal jaya that's why humm bubbling ko rok na cha tha hai.
+
+    // },false); // --> to false jab hum likh ta hai to hamra concept ata hai event bubbling ka ke niccha wala element phala print hua then uska bhar waala 
+    // bubble --> jata hai bottom se top pe
+
+    // but jab hum "true" likh deta hai then hamra concept ata hai event capurting ka ke phala bahar wala element phala print hoga then uska andar wala.
+    // capurting --> jata hai top se bottom pe
+
+
+
+    // Now understand about "preventdefault" : 
+    // document.getElementById('google').addEventListener('click',function(e) {
+    //     console.log("clicked google")
+    //     e.preventDefault(); // --> by using preventDefault() method ab jo mera ess element ka default behivour ha vo nhi hoga.
+    //     e.stopPropagation();
+    // },false)
+
+    // Now let's do some execrise :
+    // Activity : Ke mein jasa he click karu image par to vo image gayab ho jaya.
+    document.getElementById('images').addEventListener('click', function (e) {
+        // console.log(e);
+        // console.log(e.target); // .target --> event object ka ek method hai jo humma kya deta hai --> deta hai ke kise target se ye event occur ho rh hai.
+        // target to es tarika se aap le skta hai but target ke badd bhe bhot sari values hai jo aap le skta hai.
+
+        console.log(e.target.parentNode); // --> ye aapko dega target element ka parent ko return mein , Humm ne aisa es leya kara hai b/c hum puri list remove karna chata hai varna image remove ho jaya ge and bullet-point vhi pr rah jaya ga
+        
+        // There is also a method named as "tagName" which shows us the tag name of the selected/targeted element 
+        // console.log(e.target.tagName);
+        if (e.target.tagName === 'IMG') {  
+            // Ab hamra main kaam hai esko remove karna to esko remove kaisa karu : 
+            let removeIt = e.target.parentNode
+            removeIt.remove(); // --> by using remove() method humm keise bhe element ko remove kar skta hai from DOM
+        }
+
+        // There is another way also to remove element :
+        // removeIt.parentNode.removeChild(removeIt);
+
+
+    }, false)
+    
+
+</script>
+
+</html>
