@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121c8; color: white;">
+    <h1>Chai aur code</h1>
+    <button class="stop">Stop</button>
+
+</body>
+<script>
+    // Let's see Some Async JS function :
+
+    // Basic syntax of setTimeout :  
+    // setTimeout(function(){
+        
+    // }, time);
+    // Ab setTimeout mein hamra pass ek new term ate hai that is "handler" jo ke fucntion call back he hai , "handler" bass ek bolna ka tarika hai ya kahh lo another name of function call back
+
+
+    setTimeout(function() {
+        console.log("code_urge");
+    }, 3000); // --> es function ka matlab hai ke 3 sec badd mera console.log ko chala do and yaha par ye function ek he bar chala ga b/c "setTimeout" kara hai humm ne agar humm setInterval karta to hamra function continously har particular interval badd run hota.
+
+    // There is another way also to give function call back to setTimeout method
+    const sayCodeUrge = function() {
+        console.log(`@Code_urge123`)
+    }
+    setTimeout(sayCodeUrge,2000);
+    // remember one thing ke yaha par function call back mein function ka refernce pass karo ga na ke function execute kar do ga
+
+    // Ab mein chata hu ke mera heading change ho gaya to "Best js series" mein after 3 sec as page load --> to ye bhe humm kar skta hai by using setTimeout method  
+
+    const changeText = function() {
+        document.querySelector('h1').innerHTML = "BEST JS SERIES";
+    }
+
+    const changeMe = setTimeout(changeText,3000);
+    // Ok ab humm ne setTimeout to kar leya hai but ab mein chata hu ke mein given time se phala he(matlab settimeout method ke execute hona se phala he) settimeout method ko rok do --> to ye mein kaisa kar skta hu let see :
+
+    // changeMe sa humm ne settimeout method ka refernce pass kar deya so that we can stop this method.
+    // clearTimeout(changeMe); // --> By using this "cleartimeout" hum keise bhe settimeout method ko rok skta hai to ab mera ye settimeout method execute he nhi hoga
+
+    // But aisa cleartimeout karna ka to koi sense nhi banta to let apply this cleartimeout using eventlistner : 
+
+    document.querySelector('.stop').addEventListener('click',function(obj) { 
+        clearTimeout(changeMe);
+        console.log("stopped");
+    },false)
+
+
+</script>
+</html>
