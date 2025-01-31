@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur code</title>
+</head>
+<body style="background-color: #212121c8; color: white;">
+    <h1>Chai aur Javascript</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    // Now Let's understand about another Async method :
+    // setInterval(function(){
+        
+    // }, time(in ms)); --> This is the basic syntax of setInterval method
+
+
+    // Note : Using setInterval method hamra function har particular interval of time k badd call hota/chalta raha ga.
+
+    // setInterval(() => {
+    //     console.log('codeurge' , Date.now());
+    // }, 1000);
+
+    // Date.now() karna se exact date aa jati hai number format mein.
+
+    // Ab hum chahai to function alag se define karkebhe by passing function referance in setInterval apna function call kara skta hai after particular interval of time badd.
+    // Let see:
+    const sayHi = function(str) {
+        console.log(`${str} ${Date.now()}`)
+    }
+
+    const invertalId = setInterval(sayHi,1000,"hi"); // --> yaha par hum function ka referance pass kara ge tabhe hamra setInterval properly work kara ga , but agar humm function excution pass karta hai to function ek bar execute hokar band ho jaya ga --> that means "setInterval" don't work properly
+
+    // Note : As you can see above hum apna function ke andar input parameter bhe bhej skta hai through setInterval
+
+
+    // We can stop this setInterval method by using clearInterval() by given the referance of setInterval method in clearInterval method
+    clearInterval(invertalId)
+
+
+    // Now let's Do an assigement ke jaisa he mein start par click karu to mera console mein print ho @codeurge and jasa he mein stop kardu to vo print honaa bandd ho jaya
+    const sayCodeurge = function() {
+        console.log(`@codeurge123 ${Date.now()}`);
+    }
+    let clearset;
+    document.querySelector('#start').addEventListener('click',function(obj) {
+        clearset = setInterval(sayCodeurge,1000);
+    },false)
+
+    document.querySelector('#stop').addEventListener('click',function(obj) {
+        clearInterval(clearset);
+    },false)
+
+
+</script>
+</html>
