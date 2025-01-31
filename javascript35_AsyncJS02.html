@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Colors</title>
+</head>
+<body style="background-color: #212121ca; color: white;">
+    <h1 class="heading-1">Start to change the background color every Second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    // generate a random color :
+    const randomColor = function() {
+        const hex = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+            color += hex[Math.floor(Math.random() * 16)];  
+        }
+        return color;
+    }
+    let invertalId;
+    function startChangingColor() {
+        if(!invertalId) { // --> es statement se mein kahna cha rh hu ke agar meri invertId null hai tabhe invertId mein method pass karo varna mat karo.
+        invertalId = setInterval(contchangebgcolor, 1000);
+        }
+
+
+        function contchangebgcolor() {
+            document.body.style.backgroundColor = randomColor();
+        }
+    }
+
+    function stopChangingColor() {
+        clearInterval(invertalId);
+        invertalId = null; // --> ye hum ne keya hai cleaner code likh ne ke leya b/c ye likh na se abhe hamri memory wastage nhi hogi
+    }
+
+    document.getElementById('start').addEventListener('click',startChangingColor,false)
+
+    document.getElementById('stop').addEventListener('click',stopChangingColor,false)
+</script>
+</html>
