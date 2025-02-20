@@ -1,4 +1,4 @@
-// Let's Underatsnad about arrow function and this keyword:
+// Let's Understand about arrow function and this keyword:
 
 // What is THIS keyword?
 // Basically arrow function samj ne ke leya "this keyword" ko samj na padha gaa humko accha see and "this keyword" samj ne ke leya humko vapas object par jana hoga.
