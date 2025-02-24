@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Request & V8 Engine</title>
+</head>
+
+<body style="background-color: #212121; color: white;">
+    0 UNSENT Client has been created. open() not called yet.
+    1 OPENED open() has been called.
+    2 HEADERS_RECEIVED send() has been called, and headers and status are available.
+    3 LOADING Downloading; responseText holds partial data.
+    4 DONE The operation is complete.
+</body>
+<script>
+    const requestUrl = "https://api.github.com/users/codeurge123"
+    // Basically harmi jo XMLHttpRequest hoti hai vo ek tarika ke class he hoti hai to bass humm ne kya keya hai ke es "XMLHttpRequest" ka ek object bana leya hai.
+    const xhr = new XMLHttpRequest()
+    // Basically ye open() method he apki request ko bhej ta hai.
+    xhr.open('GET',requestUrl) // --> Ab open() method ke andar doo parameter humko dena hota hai --> phala ke aap kis type ke request bhej na chata ho and dosra parameter jo dena hota hai humko in open() method is api link
+
+    // console.log("Here")
+    // Note : Remember one thing ke jasa he humm ne request bhe eee hai ye constiously change hoti rahti hai (matlab status-code continously change hota rahta hai)
+
+    // console.log(xhr.readyState) // --> ye karna se readystate sirf hamri "1" print hoge because humm constiously track nhi kar raha hai.
+
+    // Let's Tracking the request continously :
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText) // basically request send hona ke badd waha se responseText milta hai return mein jo ke string format mein hota hai and mostly response from API/URL, string format mein he ata hai. So ,now we have to convert it into object/JSON format by using JSON.parse(string) so we can access the element easily and now let see also what is happening : 
+            
+
+            console.log(typeof data)
+            console.log(data.followers); // --> 'this' ka humm use karta hai jab humko current context ko access karna hota hai ya bol loo jab humm current context ke baat kar raha hota hai then we use 'this' keyword. 
+
+        }
+    } // from this we know how the status of the request (we sent) changes continously.
+    
+
+    xhr.send() // Abhe basically open() method call/use karna se request jati nhi hai,request ko send karna ke leya we have to call send() method
+
+
+
+    // This is all about "XMLHTTPRequest".
+
+
+    // V8 Engine : 
+    // Huma pata hai ke 'js' ko chalta kon hai 'NodeJs'& 'browser' engine and NodeJs bhe ek tarika ka implementation he hai 'V8 Engine' kaa.
+
+
+</script>
+
+</html>
