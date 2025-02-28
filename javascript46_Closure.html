@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+
+<body style="background-color: #212121; color: white;">
+    <button id="orange">orange</button>
+    <button id="green">green</button>
+</body>
+<script>
+    // Closure and Lexical Scoping : 
+
+    // Note : Closure Padhna ke leya Lexical Scoping padhne hoti hai.
+    // Lexical Scoping : 
+    function init() {
+        let name = "YashBansal";
+        function displayname() {
+            let secret = "my123";
+            console.log("displayname : ", name)
+        }
+        function displayname2() {
+            console.log("displayname2 : ", name)
+            // console.log(secret) --> displayname2 ka pass sirf or sirf outer function and khud ke fucntion ka variable ka access hota hai sublings ka variables ka access eska pass nhi hai.
+        }
+        displayname()
+        displayname2()
+    }
+    init();
+
+    // This is above is our "lexical scoping" in which agar function ka andar function hoga to jo andar wala function hai vo uska outer function ke variables ko access kar skta hai that means in this case outer fucntion shares it variables with inner function and inner function also has it's own variables with outer function variables but jo inner function ka variable ka access hai vo outer function ko nhi mila ga.
+    // This is all about lexical scoping :
+
+
+
+    //  Now towards closure : 
+    function makeFun() {
+        let name = "YashBansal";
+        function displayname() {
+            console.log(name)
+        }
+
+        return displayname;
+    }
+
+    const myfunc = makeFun();
+    myfunc();
+    // Ab sawal ataa hai ke aap ne to ess bar inner function return kara hai to ye kaisa shi chal rah hai b/c of closure ku ke closure mein lexical scoping ka concept ata hai and aap na jab outer function execute kara hai to "myFunc" mein inner function he nhi bukliii outer function ka scope bhe jaya ga (b/c of lexical scoping) that's why ye shi chal raha hai.
+
+
+
+
+</script>
+
+<script>
+    // document.querySelector('#orange').onclick = function() {
+    //     document.body.style.backgroundColor = "orange";
+    // }
+    // document.querySelector('#green').onclick = function() {
+    //     document.body.style.backgroundColor = "green";
+    // }
+    // --> 500 bar to aisa copy nhi kar skta.
+
+
+    // function clickHandler(color) {
+    //     document.body.style.backgroundColor = `${color}`
+    // }
+    // document.querySelector('#orange').onclick = clickHandler("orange");
+    // document.querySelector('#green').onclick = clickHandler("green"); --> Aisa bhe nhi kar skta b/c hamra handleclick function directly execute ho ja raha hai aisa karna par
+
+
+    // Now , Here comes Closure : 
+    function clickHandler(color) {
+        return function () {
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    document.getElementById('orange').onclick = clickHandler("orange")
+    document.getElementById('green').onclick = clickHandler("green")
+
+
+
+</script>
+
+</html>
