@@ -1,6 +1,6 @@
 const accounId = 142335
 let accounEmail = "yashbansal@google.com"
-// yaha par hum ne likha let jis sa ek variable create ho gaya matlab memory mein ek space reserve ho gyi hai and esko change bhe kiya ja skta hai.
+// yaha par hum ne likha 'let' jis sa ek variable create ho gaya matlab memory mein ek space reserve ho gyi hai and esko change bhe kiya ja skta hai.
 var accountPassword = "12345"
 // var ko bhe hum change kar skta hai but the only difference b/w let & var is of scope.
 // let has local scope whereas var has gloabal scope and mostlywe use "let" as "variable keyword"

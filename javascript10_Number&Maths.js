@@ -6,7 +6,7 @@ console.log(score);
 
 const balance = new Number(100);
 console.log(balance);
-// bass aap ne upar wala and ye wala number type mein ye difference paya ke upar wala mein console.log() karna par sird number print hua but es wala ko console.log() karna par special mention hua hai ke ye mera ek Number hai and them number print hua hai.
+// bass aap ne upar wala and ye wala number type mein ye difference paya ke upar wala mein console.log() karna par sirf number print hua but es wala ko console.log() karna par special mention hua hai ke ye mera ek Number hai and them number print hua hai.
 
 // Let se Some method related to Number datatype: 
 console.log(balance.toString()); // -> number ye 100 he hai but eska typeof change ho gaya hai and ab jab ye string bann he gaya hai then humm ab string ke sara method yaha par laga skta hai.
