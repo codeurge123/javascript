@@ -44,6 +44,7 @@ console.log(anotherDate.toLocaleString());
 
 // Let's understand about TimeStamp in  javascript : 
 
+// baically Date.now() karna se timestamp milta hai humaa.   
 let myTimeStamp = Date.now() // --> for getting timestamp the syntax is this , ye jo timestamp hai ye "1973" se abhe tak ka time aa rah haii in miliseconds.
 console.log(myTimeStamp);
 
