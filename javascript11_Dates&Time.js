@@ -6,7 +6,7 @@ let myDate = new Date() // --> ye mein na date ka ek obejct bana leya hai.
 console.log(myDate.toString())
 // Humm ne dekh ke jab hum na myDate object ko string mein convert kar deya then harma -> date and time shi aa rh hai but abhe bhe ye ek optimium way nhi hai date ko print karna ka .
 
-// We have different methods to showcase the date and time in javascript and different method shows date and time in different format&way.
+// We have different methods to showcase the date and time in javascript and different method shows date and time in different format & way.
 
 // Some Other methods to showcase date : 
 console.log(myDate.toDateString()); // --> This method shows only date with day
