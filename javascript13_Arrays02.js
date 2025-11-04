@@ -14,10 +14,10 @@ const dc_heros = ["superman", "flash", "batman"];
 // To eska ek alternative tarika hota hai jo use hota hai 2 arrays ko merge karna mein and ye tarika dosra array ko exact merge karna ke bajaya dosra array ke elements ko merge karta hai.
 const allHeros = marvel_heros.concat(dc_heros)
 console.log(allHeros);
-// To humm ko ek chij samaj mein aye ke concat() function return karta hai new Array ko ke combination hota hai array jisme and jisko concat. kar rh hai whereas push() function existing array mein he push karta hai elements ko.
+// To humm ko ek chij samaj mein aye ke concat() function return karta hai new Array jo ke combination hota hai array jisme and jisko concat. kar rh hai whereas push() function existing array mein he push karta hai elements ko.
 
 // Another way to merge 2 arrays :
-// Spread Operator : 
+// Spread Operator (...) : 
 const all_new_heros = [...marvel_heros, ...dc_heros];
 console.log(all_new_heros);
 

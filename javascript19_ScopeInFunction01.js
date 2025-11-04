@@ -1,6 +1,6 @@
 // Scopes : 
 
-// block ke bahar wala ko porition hota hai usa hum khata hai global scope and yaha par jo hum variable define karta hai they are called as global variable ad has global scope.
+// block ke bahar wala jo porition hota hai usa hum khata hai global scope and yaha par jo hum variable define karta hai they are called as global variable ad has global scope.
 
 
 var c = 300 

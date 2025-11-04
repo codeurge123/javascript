@@ -3,7 +3,7 @@
 
 // Let see de-structuring of Object :
 const course = {
-    coursename: "js inn hindi",
+    coursename: "js in hindi",
     price: "999",
     coursInstructor: "hitesh"
 }
@@ -11,7 +11,7 @@ const course = {
 // Agar aapko course object ke kise bhe value ko access karna hai to aap use karta hai dot operator --> but kie bar kya hota hai ke aapko code clean bana hota hai to aap etna badd nhi likh na chata(course.Instructor) to then we use destructuring of Object.
 
 // const {coursInstructor} = course;
-const { coursInstructor: instructor } = course;
+const { coursInstructor: instructor } = course; 
 
 // Ab agar aapko lag rah hai ke courseInstructor kuch jayada he bada naam hai to aap esko apna hisab se bhe naam de skta hai
 console.log(instructor);
