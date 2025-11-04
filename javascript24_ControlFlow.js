@@ -137,7 +137,7 @@ switch (month) {
 
 const name = "sam"
 switch (name) {
-    case "aman":
+    case "yash":
         console.log(`Your name is ${name}`)
         break;
     case "kasanl":
