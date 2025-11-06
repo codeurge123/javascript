@@ -5,7 +5,7 @@
 // (for of) Loop :
 
 // Syntax of (for of) Loop :
-// for (const element of object) { --> yaha par object sa matlab hmra kaval or kaval "object" se nhi hai bulki yaha object se hmra matlab hai ke kise chij ke upar loop lagna hai. 
+// for (const element of object) { --> yaha par object sa matlab hmra kaval or kaval "object" se nhi hai bulki yaha object se hmra matlab hai ke kise chij ke upar loop lagna hi. 
 
 // }
 
