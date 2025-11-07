@@ -1,11 +1,11 @@
 const coding = ["js", "ruby", "java", "python", "cpp"];
 
-// const values = coding.forEach( (item) => {
-//     // console.log(item);
-//     return item; // --> forEach loop mein return likh na ke badd bhe ye loop kuch bhe return nhi kar rah hai, ess sa humko samj mein ata hai ke forEach Loop kuch bhe value return nhi karta. But agar hum chata hai ke hamra loop value return kara to vo hum kasa kara skta hai --> vo hum kara skta hai using filter() method
-// } )
+const values = coding.forEach( (item) => {
+    console.log(item);
+    return item; // --> forEach loop mein return likh na ke badd bhe ye loop kuch bhe return nhi kar rah hai, ess sa humko samj mein ata hai ke forEach Loop kuch bhe value return nhi karta. But agar hum chata hai ke hamra loop value return kara to vo hum kasa kara skta hai --> vo hum kara skta hai using filter() method
+} )
 
-// console.log(values);
+console.log(values);
 
 const myNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
@@ -17,8 +17,8 @@ const myNum = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 // } )
 
 // Another way of Using arrow function in filter operation : 
-// let myNumber = myNum.filter( (num) => (num > 4) );
-// consolelog(myNumber);
+const myNumbers = myNum.filter( (num) => (num > 4) );
+console.log(myNumbers);
 
 
 // Agar yhi same kaam humko karna hai using "forEach" Loop to vo kasa kar skta hai: 
@@ -74,7 +74,7 @@ let userBook = book.filter((bk) => {
     }
 }) // --> Basically es statement se hum bol na cha rah hai ke jin bhe book ka genre History hai unko mujhe return kar do.
 
-// console.log(userBook)
+console.log(userBook)
 
 
 userBook = book.filter((bk) => {
@@ -120,11 +120,11 @@ const myNumber = [1, 2, 3]
 
 // -->  Now Implement the reduce operation using arrow function :
 const myTotal = myNumber.reduce((acc, currval) => {
-    // console.log(`acc : ${acc} and currval : ${currval}`)
+    console.log(`acc : ${acc} and currval : ${currval}`)
     return acc + currval;
 }, 0);
 
-// console.log(myTotal)
+console.log(myTotal)
 
 
 // Let's takes an another example of reduce operation/function 
