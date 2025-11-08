@@ -17,10 +17,10 @@
 </body>
 <script>
     const parentElements = document.querySelector('.parent'); // --> THis is how we can select any element from the webpage.
-    // console.log(parentElements); --> printing selected element
+    // console.log(parentElements); // --> printing selected element
     // console.log(parentElements.children) --> printing the childrens of the selected element that are maybe in the form of "HTMLCollection".
 
-    // console.log(parentElements.children[1].innerHTML) --> using this we are printing 1 children inner HTML of the parentElement 
+    console.log(parentElements.children[1].innerHTML) // --> using this we are printing 1 children inner HTML of the parentElement 
 
     // HTMLCollection ke upar hum khud se loop apply kar skta hai
     for (let i = 0; i < parentElements.children.length; i++) {
