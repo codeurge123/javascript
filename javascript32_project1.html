@@ -11,11 +11,21 @@
     <style>
         .button {
             display: inline-block;
-            width: 75px;
-            height: 75px;
+            width: 85px;
+            height: 35px;
             border: 2px solid black;
-            margin: 2px;
+            border-radius: 8px;
+            margin: 3px;
             margin: auto;
+            padding: 2px;
+            margin: 10px;
+            cursor: pointer;
+            box-shadow: 2px 2px;
+        }
+
+        :active.button {
+            translate: 1px 2px;
+            box-shadow: 0px 0px 0px;
         }
 
         .heading {
@@ -46,6 +56,9 @@
         #yellow {
             background-color: yellow;
         }
+        #black {
+            background-color: black;
+        }
     </style>
 </head>
 
@@ -56,6 +69,7 @@
         <div class="button" id="white"></div>
         <div class="button" id="blue"></div>
         <div class="button" id="yellow"></div>
+        <div class="button" id="black"></div>
     </div>
 
     <p class="para"><strong>Try clicking on one of the colors above to change the background color of this
@@ -81,6 +95,10 @@
             }
             else if (e.target.id === "yellow") {
                 body.style.backgroundColor = "yellow";
+            }
+            else if(e.target.id === "black") {
+                body.style.backgroundColor = "black"
+                body.style.color = "white"
             }
         })
     })
