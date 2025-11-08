@@ -58,6 +58,10 @@
             /* margin-left: 75px; */
         }
 
+        #subt:hover{
+            background-color: #0a0a0a;
+        }
+
         #guessField {
             color: #000;
             width: 250px;
@@ -86,7 +90,7 @@
             box-sizing: border-box;
             text-align: center;
             width: 450px;
-            height: 630px;
+            height: 670px;
             border-radius: 20px;
             background-color: #474747;
             color: #fff;
@@ -98,6 +102,7 @@
             border-top-left-radius: 20px;
             border-top-right-radius: 20px;
             font-size: 40px;
+            padding: 10px;
             color: #fff;
             text-align: center;
         }
@@ -105,6 +110,9 @@
         p {
             font-size: 16px;
             text-align: center;
+        }
+        #newGame {
+            cursor: pointer;
         }
     </style>
 </head>
@@ -205,6 +213,7 @@
         userInput.setAttribute('disabled', ''); // --> using this ab hum input mein kuch bhe nhi likh paya ga and always remember one thing ke disabled hamsha pair mein work karta hai
         p.classList.add('button') // --> by doing this hum ne para element ko button ke taraha bana leya hai.
         p.innerHTML = `<h3 id="newGame">Start New Game</h3>`
+        p.style.color = "white";
         startOver.appendChild(p)
         playGame = false;
         newGame();
