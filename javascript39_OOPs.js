@@ -76,6 +76,6 @@ function User(username,loginCount,isLoggedIn) {
 const userOne = new User("hitseh",12,true)
 const userTwo = new User("yash",13,false)
 console.log(userOne.constructor) // Ab ye jo constructor property hai ye reference hoti hai khudi ke baraa mein
-// console.log(userTwo)
+console.log(userTwo)
 
 // At last we knows that constructor function har barr ek naya instance humko deta hai
