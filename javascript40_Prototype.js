@@ -39,6 +39,7 @@ createUser.prototype.printMe = function() {
 const chai = new createUser("chai",25)
 const Tea = new createUser("tea",250)
 
+console.log(chai.username);
 chai.printMe()
 
 
@@ -47,7 +48,7 @@ chai.printMe()
 // let myName = "yashbansal        "
 // let myChannel = "chai          "
 
-// console.log(myName.truelength)
+// console.log(myName.trueLength)
 
 
 
@@ -65,7 +66,7 @@ let heroPower = {
 
 Object.prototype.Yash = function() {
     console.log(`Yash is present in all object`);
-}
+} // --> this is how we can add new method in all the objects in javascript using prototype.
 
 
 
@@ -111,7 +112,7 @@ const TASupport = {
 
 teacher.__proto__ = User // --> By writing this humm kahana chaa raha hai ke User ke sari properties ka access de doo in teacher object. and yhi aapki prototypial inheritance hai.
 
-
+console.log(teacher.email);
 
 // Note : ye jo humm ne inheritance ka tarika upar padha hai ye ab purna ho chuka hai So, what is the modern syntax for inheritance in javascript 
 // Let see : 
