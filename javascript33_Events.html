@@ -80,11 +80,11 @@
 
 
     // Now understand about "preventdefault" : 
-    // document.getElementById('google').addEventListener('click',function(e) {
-    //     console.log("clicked google")
-    //     e.preventDefault(); // --> by using preventDefault() method ab jo mera ess element ka default behivour ha vo nhi hoga.
-    //     e.stopPropagation();
-    // },false)
+    document.getElementById('google').addEventListener('click',function(e) {
+        console.log("clicked google")
+        e.preventDefault(); // --> by using preventDefault() method ab jo mera ess element ka default behivour ha vo nhi hoga.
+        e.stopPropagation();
+    },false)
 
     // Now let's do some execrise :
     // Activity : Ke mein jasa he click karu image par to vo image gayab ho jaya.

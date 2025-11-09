@@ -45,13 +45,15 @@
     const sayCodeurge = function() {
         console.log(`@codeurge123 ${Date.now()}`);
     }
-    let clearset;
+    let clearset = null;
     document.querySelector('#start').addEventListener('click',function(obj) {
-        clearset = setInterval(sayCodeurge,1000);
+        if(clearset == null) {
+            clearset = setInterval(sayCodeurge,1000);
+        }
     },false)
 
     document.querySelector('#stop').addEventListener('click',function(obj) {
-        clearInterval(clearset);
+        if(clearset != null) clearInterval(clearset) , clearset = null;
     },false)
 
 
