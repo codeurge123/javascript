@@ -35,8 +35,6 @@ promiseOne.then(function () {
 // Note: '.then()' ka sidha connection hai aapka 'resolve' ke sath.
 
 
-
-
 // Another Promise : 
 new Promise(function (resolve, reject) {
     setTimeout(() => {
@@ -60,11 +58,6 @@ PromiseThree.then(function (user) {
 })
 
 // Remember one thing ke .then() method ka jo function hai usii ke andar sari values return hoti hai
-
-
-
-// 
-
 
 
 // Fourth Promise :
@@ -106,7 +99,7 @@ Promisefour.then((user) => {
 // Fifth Promise : 
 const PromiseFive = new Promise(function(resolve,reject){
     setTimeout(() => {
-        let error = true;
+        let error = false;
         if(!error) {
             resolve({username:"javascript", password: "132"})
         }
@@ -159,7 +152,4 @@ fetch('https://jsonplaceholder.typicode.com/users')
     console.log(data);
 })
 .catch((error) => console.log(error))
-
-
-
 
