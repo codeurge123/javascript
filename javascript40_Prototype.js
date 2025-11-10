@@ -64,13 +64,18 @@ let heroPower = {
     }
 }
 
+// heroPower.showThorPower = function() {
+//     console.log(`Thor's power is ${this.thor}`);
+// }
+
+// heroPower.showThorPower();
+
 Object.prototype.Yash = function() {
     console.log(`Yash is present in all object`);
 } // --> this is how we can add new method in all the objects in javascript using prototype.
 
 
-
-// heroPower.Yash(); --> humm na object mein method insert kara hai "Yash" naam se and vo ab heroPoer obejct mein bhe aa gaya hai because meri hara ek chij ka prototype in javascript "Object" he hai.
+// heroPower.Yash(); --> humm na object mein method insert kara hai "Yash" naam se and vo ab heroPower obejct mein bhe aa gaya hai because meri hara ek chij ka prototype in javascript "Object" he hai.
 myHeros.Yash() // --> Ab from this we clearly understand that hum ne object mein method insert kara hai and vo ab har ek datatype mein aa chuka hai b/c har ek datatype kahi na kahi object he hota hai in javascript ya har datatype ka prototype object he hota hai in javascript(js).
 
 
@@ -107,6 +112,8 @@ const TASupport = {
     // To inherite the properties of other Object what we have to do is : 
     __proto__: teachingSupport
 }
+// console.log(TASupport.isAvailable) --> now by using the object TASupport we can access the property of the object teaching support b/c of the inheritance
+
 
 // Aisa nhi hai ke aap kese or object ka access in another object andar he le skta ho object literal ke aap chahoo to aap bahar bhe keise or object mein another object ka access le skta ho.
 

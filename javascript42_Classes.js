@@ -107,7 +107,7 @@ class User{
     }
     // --> Using static keyword hamra object can't use these method who are assigned static    
 }
-
+// yash.loggMe();
 const yash = new User("yashbansal");
 // console.log(yash.createId()); --> this will show error b/c hum ne createId wala method ko static bana deya hai to ab object ess method ko access nhi kar skta.
 
