@@ -57,9 +57,3 @@ for (const [key,value] of Object.entries(chai)) {
 }
 // And ess for loop ke result mein "name" print es leya nhi hua hai because hum na "name" property ka leya enumerable: "false" kar rakha hai humm na 
 // enumerable means humm usss object ke property ke upar "iterate nhi" kara ga jis-jis object properties ka "enumerable false hai".
-
-
-
-
-
-

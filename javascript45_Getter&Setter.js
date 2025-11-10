@@ -12,6 +12,7 @@ class User {
     }
 
     set email(value) {
+        console.log(`Setting new email`);
         this._email = value
     }
 
@@ -26,6 +27,7 @@ class User {
 
     // Agar koi value set karna chata ho class ke andar to "setter" use hota hai. 
     set passsword(value) {
+        console.log(`Setting new password`);
         this._passsword = value;
         // Remember one thing ke "setter" ko kabhe bhe return nhi karta hai.
     }
